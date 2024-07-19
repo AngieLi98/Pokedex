@@ -21,6 +21,10 @@ module.exports = {
                 test: /\.css$/, // Aplicar loaders a archivos .css
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i, // Aplicar loader a archivos de imagen
+                type: "asset/resource",
+              },
         ]
     },
     devServer: {
