@@ -4,7 +4,7 @@ import { renderPokemonDetails } from "./render.js";
 import pokebolaIcon from "../images/pokebola.png";
 
 const init = async () => {
-  const initialPokemon = await fetchPokemon(48);
+  const initialPokemon = await fetchPokemon(6);
   renderPokemonDetails(initialPokemon);
 };
 
