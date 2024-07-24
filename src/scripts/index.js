@@ -2,10 +2,12 @@ import "../styles/index.scss";
 import { fetchPokemon } from "./api.js";
 import { renderPokemonDetails } from "./render.js";
 import pokebolaIcon from "../images/pokebola.png";
+import { loadPokemonFooter } from './footerPokemon.js'; 
 
 const init = async () => {
   const initialPokemon = await fetchPokemon(48);
   renderPokemonDetails(initialPokemon);
+  loadPokemonFooter();
 };
 
 init();
