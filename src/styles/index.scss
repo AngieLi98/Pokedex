@@ -16,7 +16,6 @@ $general-fonts: "Play", sans-serif;
 
 body {
   background-color: $bg-color;
-//   padding: 0.5rem 1.5rem;
 }
 /* HEADER SECTION */
 
@@ -80,7 +79,7 @@ body {
 
         svg path{
           width: 1.76vw;
-          color: $color-white;
+          fill: $color-white;
         }
       }
     }
