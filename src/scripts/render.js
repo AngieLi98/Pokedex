@@ -75,7 +75,7 @@ const importAll = (r) => {
         pokemon.abilities.map((ability) => ability.ability.name).join(", ")
       )
     );
-    infoDiv.appendChild(createParagraph("Level", pokemon.level || "N/A"));
+    infoDiv.appendChild(createParagraph("Level", pokemon.base_experience || "N/A"));
   
     // Agregar elementos al contenedor principal
     detailsDiv.appendChild(imageDiv);

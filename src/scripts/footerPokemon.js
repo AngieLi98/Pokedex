@@ -12,7 +12,7 @@ const getPokemonByName = async (name) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
     if (!response.ok) {
-      throw new Error('Pokémon not found');
+      return null;
     }
     return await response.json();
   } catch (error) {
@@ -85,6 +85,7 @@ export const loadPokemonFooter = async (query = '') => {
     const pokemon = await getPokemonByName(query);
     if (pokemon) {
       pokemonCardsContainer.appendChild(createPokemonCard(pokemon));
+      renderPokemonDetails(pokemon); // Carga en el main 
     } else {
       showError('Pokémon no encontrado. Verifica la ortografía.');
     }
