@@ -39,19 +39,10 @@ const handleSearchSubmit = async (event) => {
   const query = searchInput.value.trim();
   if (query) {
     await loadPokemonFooter(query);
-  }
-};
-
-// Función para manejar la búsqueda dinámica
-const handleSearchInput = async () => {
-  const query = searchInput.value.trim();
-  if (query.length > 1) { // Para evitar realizar búsquedas con solo un carácter
-    await loadPokemonFooter(query);
-  } else if (query.length === 0) {
+  } else  {
     await loadPokemonFooter(); // Mostrar Pokémon aleatorios si no hay búsqueda
   }
 };
 
-// Agregar el manejador de eventos al formulario y al campo de búsqueda
 searchForm.addEventListener('submit', handleSearchSubmit);
-searchInput.addEventListener('input', handleSearchInput);
+
