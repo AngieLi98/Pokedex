@@ -3,7 +3,7 @@ import { renderPokemonDetails } from './render.js';
 
 // Función para obtener un Pokémon aleatorio
 const getRandomPokemon = async () => {
-  const randomId = Math.floor(Math.random() * 898) + 1; // Suponiendo que hay 898 Pokémon
+  const randomId = Math.floor(Math.random() * 1000) + 1; 
   return await fetchPokemon(randomId);
 };
 
