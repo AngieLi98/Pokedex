@@ -2,8 +2,7 @@ import "../styles/index.scss";
 import { fetchPokemon } from "./api.js";
 import { renderPokemonDetails } from "./render.js";
 import pokebolaIcon from "../images/pokebola.png";
-import { loadPokemonFooter } from './footerPokemon.js'; 
-
+import { loadPokemonFooter } from "./footerPokemon.js";
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -28,10 +27,9 @@ imgElement.classList.add("logo-img"); // Añadir una clase para estilos
 // Insertar la imagen antes del título
 headerSection.insertBefore(imgElement, headerSection.querySelector("h1"));
 
-
 // Obtener elementos del DOM
-const searchForm = document.getElementById('busqueda');
-const searchInput = document.getElementById('inputBusqueda');
+const searchForm = document.getElementById("busqueda");
+const searchInput = document.getElementById("inputBusqueda");
 
 // Función para manejar el envío del formulario
 const handleSearchSubmit = async (event) => {
@@ -39,10 +37,19 @@ const handleSearchSubmit = async (event) => {
   const query = searchInput.value.trim();
   if (query) {
     await loadPokemonFooter(query);
-  } else  {
+  } else {
     await loadPokemonFooter(); // Mostrar Pokémon aleatorios si no hay búsqueda
   }
 };
 
-searchForm.addEventListener('submit', handleSearchSubmit);
+searchForm.addEventListener("submit", handleSearchSubmit);
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+    const goToFavoritesButton = document.getElementById('go-to-favorites');
+  
+    goToFavoritesButton.addEventListener('click', () => {
+      window.location.href = 'favorites.html';
+    });
+  }
+});

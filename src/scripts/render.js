@@ -78,8 +78,6 @@ export const renderPokemonDetails = (pokemon) => {
   const title = document.createElement("h2");
   title.textContent = pokemon.name;
 
-  
-
   // Añadir el ícono de estrella para favoritos
   // Crear un ícono de estrella para favoritos
   const favoriteIcon = document.createElement("span");
