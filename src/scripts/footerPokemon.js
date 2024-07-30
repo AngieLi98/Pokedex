@@ -21,20 +21,6 @@ const getPokemonByName = async (name) => {
   }
 };
 
-// Función para asignar clase según el tipo de Pokémon
-const getTypeClass = (type) => {
-  switch (type) {
-    case 'fire':
-      return 'type-fire';
-    case 'water':
-      return 'type-water';
-    case 'grass':
-      return 'type-grass';
-    // Agrega más tipos según sea necesario
-    default:
-      return 'type-default';
-  }
-};
 
 // Función para crear y mostrar tarjetas de Pokémon
 const createPokemonCard = (pokemon) => {
@@ -96,4 +82,31 @@ export const loadPokemonFooter = async (query = '') => {
       pokemonCardsContainer.appendChild(createPokemonCard(pokemon));
     }
   }
+};
+
+// Definir las clases de tipo para CSS
+const typeClasses = {
+  normal: 'type-normal',
+  fire: 'type-fire',
+  water: 'type-water',
+  electric: 'type-electric',
+  grass: 'type-grass',
+  ice: 'type-ice',
+  fighting: 'type-fighting',
+  poison: 'type-poison',
+  ground: 'type-ground',
+  flying: 'type-flying',
+  psychic: 'type-psychic',
+  bug: 'type-bug',
+  rock: 'type-rock',
+  ghost: 'type-ghost',
+  dragon: 'type-dragon',
+  dark: 'type-dark',
+  steel: 'type-steel',
+  fairy: 'type-fairy'
+};
+
+// Función para obtener la clase CSS del tipo de Pokémon
+const getTypeClass = (type) => {
+  return typeClasses[type] || 'type-unknown'; // Devuelve 'type-unknown' si no se encuentra el tipo
 };
